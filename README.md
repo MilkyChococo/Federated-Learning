@@ -11,11 +11,11 @@ There are two main types of **Federated Learning**, including:
 1. **Horizontal Federated Learning (Data Parallelism)**:
    - In this approach, the data on different devices is of the **same type** but comes from different users or devices.
    - Example: Multiple smartphones training a model for text prediction using their local data.
-
+![Definitions]().
 2. **Vertical Federated Learning (Feature Parallelism)**:
    - In vertical FL, the data is **different types** but the same set of users is involved.
    - Example: A company and a bank may collaborate, where the bank has financial data and the company has demographic data of the same customers.
-
+![Definitions]().
 ---
 
 ### 🔹 **How Federated Learning Works**
