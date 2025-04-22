@@ -8,14 +8,17 @@ In a **Federated Learning** setup, each participant (usually edge devices like s
 
 There are two main types of **Federated Learning**, including:
 
-1. **Horizontal Federated Learning (Data Parallelism)**:
-   - In this approach, the data on different devices is of the **same type** but comes from different users or devices.
-   - Example: Multiple smartphones training a model for text prediction using their local data.
-![Definitions]().
-2. **Vertical Federated Learning (Feature Parallelism)**:
-   - In vertical FL, the data is **different types** but the same set of users is involved.
-   - Example: A company and a bank may collaborate, where the bank has financial data and the company has demographic data of the same customers.
-![Definitions]().
+1. **Horizontal Federated Learning**:
+   - **Horizontal Federated Learning (Horizontal FL)**, also known as **Data Parallelism**, is a type of Federated Learning where the data on different devices is of the same type, but each device holds data from different users. In this setup, each client device (or edge device) trains a model on its local data, and the central server aggregates the model updates from these devices to form a global model. This approach is used when data is distributed across multiple devices, but all the devices use the same type of data.
+     
+
+2. **Vertical Federated Learning**:
+   - **Vertical Federated Learning (Vertical FL)**, also known as **Feature Parallelism**, is a form of Federated Learning where the data types across different devices or servers are different, but the same set of users is involved. This means that each device or data owner holds different features (columns) of the same users' data, but does not have access to the full set of features (or columns) for any individual user.
+     
+3. **Federated Transfer Learning**:
+   - **Federated Transfer Learning (FTL)** is a combination of **Federated Learning (FL)** and **Transfer Learning**. This approach helps address situations where data across devices is highly heterogeneous—i.e., where data on each device is not only non-IID (Non-Independent and Identically Distributed) but also might differ significantly in structure or content. In such cases, Federated Transfer Learning can be used to improve model performance by leveraging a pre-trained model and fine-tuning it with the local data available on each client device.
+
+
 ---
 
 ### 🔹 **How Federated Learning Works**
@@ -42,19 +45,17 @@ Some of the key algorithms and methods used in Federated Learning include:
    
 2. **Federated SGD (Stochastic Gradient Descent)**:
    - A variant of the classic SGD used in Federated Learning, where local updates are computed at each device, and the global update is performed by aggregating them.
-3. **Federated Transfer Learning**:
-   - **Federated Transfer Learning (FTL)** is a combination of Federated Learning (FL) and Transfer Learning. This approach helps address situations where data across devices is highly heterogeneous—i.e., where data on each device is not only non-IID (Non-Independent and Identically Distributed) but also might differ significantly in structure or content. In such cases, Federated Transfer Learning can be used to improve model performance by leveraging a pre-trained model and fine-tuning it with the local data available on each client device.
      
-4. **Federated Optimization**:
+3. **Federated Optimization**:
    - **Federated Optimization** aims to optimize the performance of machine learning models while minimizing the communication overhead and computational cost in a Federated Learning (FL) setup. Since FL involves training models across distributed devices (or clients) without sharing raw data, optimization plays a crucial role in achieving effective learning with minimal resources.
 
-5. **Differential Privacy in FL**:
+4. **Differential Privacy in FL**:
    - **Differential Privacy** (DP) is integrated with Federated Learning (FL) to protect individual user data during model training. It ensures that model updates, such as gradients, do not expose sensitive information from local devices. By adding noise to the updates, DP prevents the identification of any individual data point, thus maintaining user privacy while still enabling collaborative model improvements.
    
-6. **Secure Aggregation**:
+5. **Secure Aggregation**:
    - **Secure Aggregation** is a critical technique used in Federated Learning to enhance privacy and security. It ensures that the central server responsible for aggregating model updates does not have access to individual updates from the clients. Instead, the server can only compute the aggregated result, preventing any individual model updates from being exposed.
 
-7. **Federated Search for NLP**:
+6. **Federated Search for NLP**:
    - **Federated Search for NLP** combines the power of Federated Learning with Natural Language Processing (NLP) techniques to perform searching tasks on data stored in distributed locations (such as local devices or edge devices) while preserving privacy.
 
    - In traditional search systems, a central server receives all the data to perform indexing and querying. However, with Federated Search, the data stays on local devices, and only model updates or search-related insights are shared with the central server. This is especially useful for systems where the data is sensitive, such as in healthcare, finance, or personal assistants.
